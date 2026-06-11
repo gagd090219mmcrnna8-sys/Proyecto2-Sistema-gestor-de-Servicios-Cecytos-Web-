@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usuario</title>
+</head>
+<body>
+{% extends 'layout_usuario.html' %}
+
+{% block titulo %}
+Inicio
+{% endblock %}
+
+{% block contenido %}
+
+<h1>Mi Panel</h1>
+
+<br>
+
+<div class="tarjetas">
+
+    <div class="tarjeta">
+        <h3>📋 Total Reportes</h3>
+        <h2>{{ total }}</h2>
+    </div>
+
+    <div class="tarjeta">
+        <h3>⏳ Pendientes</h3>
+        <h2>{{ pendientes }}</h2>
+    </div>
+
+</div>
+
+<br>
+
+<div class="tarjetas">
+
+    <div class="tarjeta">
+        <h3>⚙️ En Proceso</h3>
+        <h2>{{ proceso }}</h2>
+    </div>
+
+    <div class="tarjeta">
+        <h3>✅ Finalizados</h3>
+        <h2>{{ finalizados }}</h2>
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+    <a href="/logout">
+    <button>🚪Cerrar Sesión</button>
+    </a>
+
+</body>
+</html>

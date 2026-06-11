@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nuevo Usuario</title>
+</head>
+<body>
+
+{% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Nuevo Usuario
+{% endblock %}
+
+{% block contenido %}
+
+<div class="formulario">
+
+<h1>Registrar Usuario</h1>
+
+<form action="/guardar_usuario" method="POST">
+
+    <label>Nombre</label>
+    <input type="text" name="nombre" required>
+
+    <label>Correo</label>
+    <input type="email" name="correo" required>
+
+    <label>Contraseña</label>
+    <input type="password" name="password" required>
+
+    <label>Rol</label>
+
+    <select name="rol">
+
+        <option value="usuario">
+            Usuario
+        </option>
+
+        <option value="admin">
+            Administrador
+        </option>
+
+    </select>
+
+    <button type="submit">
+        Guardar
+    </button>
+
+    <a href="/usuarios" class="btn-cancelar">
+                Cancelar
+            </a>
+</form>
+
+</div>
+
+{% endblock %}
+
+</body>
+</html>

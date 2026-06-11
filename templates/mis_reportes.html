@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+{% extends 'layout_usuario.html' %}
+
+{% block titulo %}
+Mis Reportes
+{% endblock %}
+
+{% block contenido %}
+
+<h1>Mis Reportes</h1>
+
+<table>
+
+<tr>
+
+<th>Fecha</th>
+
+<th>Hora</th>
+
+<th>Servicio</th>
+
+<th>Estado</th>
+
+<th>Prioridad</th>
+
+</tr>
+
+{% for r in reportes %}
+
+<tr>
+
+<td>{{ r.fecha_reporte }}</td>
+
+<td>{{ r.hora_reporte }}</td>
+
+<td>{{ r.nombre_servicio }}</td>
+
+<td>{{ r.estado }}</td>
+
+<td>{{ r.prioridad }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
+
+
+
+</body>
+</html>

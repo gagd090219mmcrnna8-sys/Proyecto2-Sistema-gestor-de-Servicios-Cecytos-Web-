@@ -1,0 +1,1012 @@
+/* =========================
+   FUENTE
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+
+    --silver-chalice:#A6A6A6;
+    --pale-cornflower:#AEC6E6;
+    --pewter-blue:#8BA6B9;
+    --silver-lake-blue:#6F8FAF;
+    --royal-brown:#6B4F3B;
+
+    --white:#ffffff;
+    --background:#f4f6f9;
+    --shadow:rgba(0,0,0,.10);
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:var(--background);
+    overflow-x:hidden;
+}
+
+/* =========================
+   FONDO ANIMADO
+========================= */
+
+.background-animation{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:-1;
+
+    background:linear-gradient(
+        -45deg,
+        #AEC6E6,
+        #8BA6B9,
+        #6F8FAF,
+        #A6A6A6
+    );
+
+    background-size:400% 400%;
+
+    animation:fondoAnimado 15s ease infinite;
+}
+
+@keyframes fondoAnimado{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+
+.contenedor{
+    display:flex;
+    min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+
+    width:260px;
+
+    background:var(--pewter-blue);
+
+    color:white;
+
+    padding:25px;
+
+    box-shadow:
+    4px 0 20px rgba(0,0,0,.15);
+}
+
+.sidebar h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-size:26px;
+
+    font-weight:700;
+}
+
+.sidebar a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px;
+
+    margin-bottom:10px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.sidebar a:hover{
+
+    background:var(--silver-lake-blue);
+
+    transform:translateX(8px);
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.contenido{
+
+    flex:1;
+
+    padding:30px;
+
+    animation:aparecer .8s ease;
+}
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.encabezado{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 5px 15px var(--shadow);
+}
+
+.encabezado h2{
+    color:var(--royal-brown);
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.tarjetas{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+}
+
+.tarjeta{
+
+    flex:1;
+
+    min-width:220px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:
+    0 8px 20px var(--shadow);
+
+    transition:.3s;
+}
+
+.tarjeta:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.15);
+}
+
+.tarjeta h3{
+
+    color:var(--royal-brown);
+
+    margin-bottom:10px;
+}
+
+.tarjeta h2{
+
+    font-size:32px;
+
+    color:var(--silver-lake-blue);
+}
+
+/* =========================
+   FORMULARIOS
+========================= */
+
+.formulario{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 8px 20px var(--shadow);
+}
+
+.formulario h1{
+
+    margin-bottom:20px;
+
+    color:var(--royal-brown);
+}
+.formulario{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.10);
+}
+label{
+
+    font-weight:500;
+
+    color:#444;
+}
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:5px;
+
+    margin-bottom:18px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:8px;
+
+    transition:.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:var(--silver-lake-blue);
+
+    box-shadow:
+    0 0 8px rgba(111,143,175,.3);
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+button{
+
+    background:var(--silver-lake-blue);
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    background:var(--royal-brown);
+
+    transform:scale(1.05);
+}
+
+button:active{
+
+    transform:scale(.95);
+}
+
+/* =========================
+   TABLAS
+========================= */
+
+table{
+
+    width:100%;
+
+    background:white;
+
+    border-collapse:collapse;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 15px var(--shadow);
+}
+
+th{
+
+    background:var(--pewter-blue);
+
+    color:white;
+
+    padding:15px;
+
+    text-align:center;
+}
+
+td{
+
+    padding:12px;
+
+    border-bottom:1px solid #ececec;
+
+    text-align:center;
+}
+
+tr:hover{
+
+    background:#f1f7fc;
+}
+
+/* =========================
+   LINKS DE ACCIONES
+========================= */
+
+td a{
+
+    text-decoration:none;
+
+    color:var(--silver-lake-blue);
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+td a:hover{
+
+    color:var(--royal-brown);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+    width:180px;
+
+    display:block;
+
+    margin:auto;
+
+    animation:flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   TITULOS
+========================= */
+
+h1{
+
+    color:var(--royal-brown);
+
+    margin-bottom:20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .contenedor{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .tarjetas{
+        flex-direction:column;
+    }
+}
+
+/* =========================
+   FORMULARIOS DE EDICION
+========================= */
+
+.subtitulo{
+
+    color:#666;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+}
+
+.botones-formulario{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+.btn-cancelar{
+
+    background:#A6A6A6;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.btn-cancelar:hover{
+
+    background:#6B4F3B;
+
+    transform:scale(1.05);
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-container{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+}
+
+.login-card{
+
+    width:100%;
+
+    max-width:450px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.15);
+
+    animation:aparecer .8s ease;
+}
+
+.logo-login{
+
+    width:300px;
+
+    margin-bottom:15px;
+
+    animation:flotar 3s ease-in-out infinite;
+}
+
+.login-card h1{
+
+    color:var(--royal-brown);
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.login-subtitulo{
+
+    color:#666;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+}
+
+.login-card form{
+
+    text-align:left;
+}
+
+.login-card label{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    font-weight:500;
+}
+
+.login-card input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:18px;
+
+    border:1px solid #dcdcdc;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+.login-card input:focus{
+
+    outline:none;
+
+    border-color:var(--silver-lake-blue);
+
+    box-shadow:
+    0 0 10px rgba(111,143,175,.3);
+}
+
+.login-card button{
+
+    width:100%;
+
+    margin-top:10px;
+}
+
+/* =========================
+   BIENVENIDA PROFESIONAL
+========================= */
+
+.bienvenida{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    backdrop-filter: blur(8px);
+}
+
+/* TARJETA CENTRAL */
+
+.bienvenida::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:850px;
+
+    height:650px;
+
+    background:rgba(255,255,255,0.15);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.15);
+
+    z-index:-1;
+}
+
+/* LOGO */
+
+.logo{
+
+    width:320px;
+
+    margin-bottom:20px;
+
+    animation:flotar 3s ease-in-out infinite;
+}
+
+.bienvenida h1{
+
+    font-size:4.2rem;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+    background:linear-gradient(
+        90deg,
+        #2f3e46,
+        #6F8FAF,
+        #2f3e46
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 5px 20px rgba(0,0,0,.15);
+}
+
+/* SUBTITULO */
+
+.bienvenida h2{
+
+    font-size:2rem;
+
+    font-weight:600;
+
+    color:#4f6575;
+
+    margin-bottom:25px;
+
+    text-shadow:
+    0 2px 8px rgba(255,255,255,.6);
+}
+
+/* DESCRIPCION */
+
+.bienvenida p{
+
+    max-width:850px;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:#2f2f2f;
+
+    font-weight:500;
+
+    margin-bottom:35px;
+}
+ .botones-bienvenida{
+
+    display:flex;
+
+    gap:20px;
+
+    justify-content:center;
+}
+
+.btn-principal{
+
+    background:linear-gradient(
+        135deg,
+        #6F8FAF,
+        #8BA6B9
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.4s;
+
+    box-shadow:
+    0 10px 20px rgba(111,143,175,.35);
+}
+
+.btn-principal:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 15px 25px rgba(111,143,175,.45);
+}
+
+.btn-secundario{
+
+    background:linear-gradient(
+        135deg,
+        #6B4F3B,
+        #8b6b52
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.4s;
+}
+
+.btn-secundario:hover{
+
+    transform:translateY(-5px);
+}
+
+@keyframes brilloTitulo{
+
+    0%{
+        opacity:.7;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.7;
+    }
+}
+
+.bienvenida h1{
+
+    animation:
+    brilloTitulo 4s infinite;
+}
+
+
+
+
+
+
+
+
+.registro-link{
+
+    text-align:center;
+
+    margin-top:15px;
+}
+
+.registro-link a{
+
+    color:var(--silver-lake-blue);
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+.registro-link a:hover{
+
+    color:var(--royal-brown);
+}
+
+
+/* =========================
+   BURBUJAS ANIMADAS
+========================= */
+
+.bubbles{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    top:0;
+    left:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+}
+
+.bubbles span{
+
+    position:absolute;
+
+    display:block;
+
+    bottom:-150px;
+
+    border-radius:50%;
+
+    background:rgba(104, 126, 186, 0.849);
+    
+    backdrop-filter:blur(5px);
+    
+    box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.5);
+
+    animation:animarBurbujas 20s linear infinite;
+}
+
+/* Tamaños y posiciones */
+
+.bubbles span:nth-child(1){
+    left:10%;
+    width:40px;
+    height:40px;
+    animation-duration:14s;
+}
+
+.bubbles span:nth-child(2){
+    left:20%;
+    width:80px;
+    height:80px;
+    animation-duration:18s;
+}
+
+.bubbles span:nth-child(3){
+    left:35%;
+    width:30px;
+    height:30px;
+    animation-duration:12s;
+}
+
+.bubbles span:nth-child(4){
+    left:50%;
+    width:60px;
+    height:60px;
+    animation-duration:20s;
+}
+
+.bubbles span:nth-child(5){
+    left:65%;
+    width:90px;
+    height:90px;
+    animation-duration:22s;
+}
+
+.bubbles span:nth-child(6){
+    left:75%;
+    width:40px;
+    height:40px;
+    animation-duration:15s;
+}
+
+.bubbles span:nth-child(7){
+    left:85%;
+    width:70px;
+    height:70px;
+    animation-duration:19s;
+}
+
+.bubbles span:nth-child(8){
+    left:95%;
+    width:35px;
+    height:35px;
+    animation-duration:13s;
+}
+
+.bubbles span:nth-child(9){
+    left:45%;
+    width:50px;
+    height:50px;
+    animation-duration:17s;
+}
+
+.bubbles span:nth-child(10){
+    left:5%;
+    width:100px;
+    height:100px;
+    animation-duration:24s;
+}
+
+/* Animación */
+
+@keyframes animarBurbujas{
+
+    0%{
+
+        transform:
+        translateY(0)
+        scale(0);
+
+        opacity:0;
+    }
+
+    20%{
+
+        opacity:0.4;
+    }
+
+    100%{
+
+        transform:
+        translateY(-120vh)
+        scale(1.2);
+
+        opacity:0;
+    }
+}

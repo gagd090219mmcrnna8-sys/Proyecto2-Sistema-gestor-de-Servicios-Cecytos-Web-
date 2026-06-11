@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+{% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Nuevo Servicio
+{% endblock %}
+
+{% block contenido %}
+
+<div class="formulario">
+
+<h1>Registrar Servicio</h1>
+
+<form action="/guardar_servicio" method="POST">
+
+    <label>Nombre del Servicio</label>
+
+    <input
+        type="text"
+        name="nombre_servicio"
+        required>
+
+    <label>Descripción</label>
+
+    <textarea
+        name="descripcion"
+        required>
+    </textarea>
+
+    <label>Horario</label>
+
+    <input
+        type="text"
+        name="horario"
+        placeholder="08:00 - 16:00">
+
+    <label>Responsable</label>
+
+    <input
+        type="text"
+        name="responsable">
+
+    <button type="submit">
+        Guardar
+    </button>
+
+    <a href="/usuarios" class="btn-cancelar">
+                Cancelar
+            </a>
+</form>
+
+</div>
+
+{% endblock %}    
+
+
+</body>
+</html>

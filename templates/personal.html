@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Personal
+{% endblock %}
+
+{% block contenido %}
+
+<h1>Gestión de Personal</h1>
+
+<br>
+
+<a href="/nuevo_personal">
+    <button>Nuevo Personal</button>
+</a>
+
+<br><br>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Puesto</th>
+    <th>Área</th>
+    <th>Teléfono</th>
+    <th>Acciones</th>
+</tr>
+
+{% for p in personal %}
+
+<tr>
+
+<td>{{ p.id_personal }}</td>
+<td>{{ p.nombre }}</td>
+<td>{{ p.puesto }}</td>
+<td>{{ p.area }}</td>
+<td>{{ p.telefono }}</td>
+
+<td>
+
+<a href="/editar_personal/{{ p.id_personal }}">
+Editar
+</a>
+
+|
+
+<a
+href="/eliminar_usuario/{{ p.id_personal }}"
+
+onclick="
+return confirm(
+'¿Deseas eliminar este registro?'
+);">
+
+Eliminar
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
+
+
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Servicios
+{% endblock %}
+
+{% block contenido %}
+
+<h1>Gestión de Servicios</h1>
+
+<br>
+
+<a href="/nuevo_servicio">
+    <button>Nuevo Servicio</button>
+</a>
+
+<br><br>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Servicio</th>
+    <th>Horario</th>
+    <th>Responsable</th>
+    <th>Estado</th>
+    <th>Acciones</th>
+</tr>
+
+{% for servicio in servicios %}
+
+<tr>
+
+<td>{{ servicio.id_servicio }}</td>
+
+<td>{{ servicio.nombre_servicio }}</td>
+
+<td>{{ servicio.horario }}</td>
+
+<td>{{ servicio.responsable }}</td>
+
+<td>{{ servicio.estado_servicio }}</td>
+
+<td>
+
+<a href="/editar_servicio/{{ servicio.id_servicio }}">
+Editar
+</a>
+
+|
+
+<a
+href="/eliminar_usuario/{{ servicio.id_servicio }}"
+
+onclick="
+return confirm(
+'¿Deseas eliminar este registro?'
+);">
+
+Eliminar
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
+
+</body>
+</html>

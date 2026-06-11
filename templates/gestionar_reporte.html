@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+{% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Gestionar Reporte
+{% endblock %}
+
+{% block contenido %}
+
+<div class="formulario">
+
+<h1>Gestionar Reporte</h1>
+
+<form action="/actualizar_reporte" method="POST">
+
+<input
+type="hidden"
+name="id_reporte"
+value="{{ reporte.id_reporte }}">
+
+<label>Estado</label>
+
+<select name="estado">
+
+<option value="Pendiente">
+Pendiente
+</option>
+
+<option value="En Proceso">
+En Proceso
+</option>
+
+<option value="Finalizado">
+Finalizado
+</option>
+
+</select>
+
+<label>Asignar Personal</label>
+
+<select name="id_personal">
+
+<option value="">
+Seleccione
+</option>
+
+{% for p in personal %}
+
+<option
+value="{{ p.id_personal }}">
+
+{{ p.nombre }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+<label>Observaciones</label>
+
+<textarea
+name="observaciones">
+</textarea>
+
+<button type="submit">
+Actualizar Reporte
+</button>
+
+
+<a href="/usuarios" class="btn-cancelar">
+                Cancelar
+            </a>
+</form>
+
+</div>
+
+{% endblock %}
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Editar Personal
+{% endblock %}
+
+{% block contenido %}
+
+<div class="formulario">
+
+    <h1>Editar Personal</h1>
+
+    <form action="/actualizar_personal" method="POST">
+
+        <input
+            type="hidden"
+            name="id_personal"
+            value="{{ personal.id_personal }}">
+
+        <label>Nombre</label>
+
+        <input
+            type="text"
+            name="nombre"
+            value="{{ personal.nombre }}"
+            required>
+
+        <label>Puesto</label>
+
+        <input
+            type="text"
+            name="puesto"
+            value="{{ personal.puesto }}"
+            required>
+
+        <label>Área</label>
+
+        <input
+            type="text"
+            name="area"
+            value="{{ personal.area }}">
+
+        <label>Teléfono</label>
+
+        <input
+            type="text"
+            name="telefono"
+            value="{{ personal.telefono }}">
+
+        <label>Correo</label>
+
+        <input
+            type="email"
+            name="correo"
+            value="{{ personal.correo }}">
+
+        <label>Turno</label>
+
+        <input
+            type="text"
+            name="turno"
+            value="{{ personal.turno }}">
+
+        <br>
+
+        <button type="submit">
+            Actualizar Personal
+        </button>
+
+        <a href="/usuarios" class="btn-cancelar">
+                Cancelar
+            </a>
+    </form>
+
+</div>
+
+{% endblock %}
+
+
+
+</body>
+</html>

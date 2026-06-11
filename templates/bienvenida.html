@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>CECYTOS WEB SERVICES</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+
+<body>
+
+    
+    <div class="bubbles">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+</div>
+
+    <div class="bienvenida">
+
+        
+
+        <h1>CECYTOS WEB SERVICES</h1>
+
+        <h2>
+            Sistema de Gestión de Servicios Comunitarios
+        </h2>
+        <img
+        src="{{ url_for('static', filename='img/logo1.png') }}"
+        class="logo"
+        alt="Logo">
+
+        <p>
+            Bienvenido a la plataforma encargada de gestionar
+            servicios comunitarios, reportes ciudadanos y
+            seguimiento de solicitudes.
+
+            Nuestro sistema permite registrar usuarios,
+            administrar servicios, asignar personal
+            responsable y dar seguimiento eficiente a cada
+            reporte generado por la comunidad.
+        </p>
+
+        <div class="botones-bienvenida">
+
+            <a href="/login" class="btn-principal">
+                Iniciar Sesión
+            </a>
+
+            <a href="/registro" class="btn-secundario">
+                Crear Cuenta
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

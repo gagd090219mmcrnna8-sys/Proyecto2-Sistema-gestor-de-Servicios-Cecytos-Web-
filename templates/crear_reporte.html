@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% extends 'layout_usuario.html' %}
+
+{% block titulo %}
+Crear Reporte
+{% endblock %}
+
+{% block contenido %}
+
+<div class="formulario">
+
+<h1>Nuevo Reporte</h1>
+
+<form action="/guardar_reporte" method="POST">
+
+<label>Servicio</label>
+
+<select name="id_servicio">
+
+{% for servicio in servicios %}
+
+<option
+value="{{ servicio.id_servicio }}">
+
+{{ servicio.nombre_servicio }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+<label>Descripción</label>
+
+<textarea
+name="descripcion"
+required>
+</textarea>
+
+<label>Ubicación</label>
+
+<input
+type="text"
+name="ubicacion"
+required>
+
+<label>Prioridad</label>
+
+<select name="prioridad">
+
+<option value="Baja">
+Baja
+</option>
+
+<option value="Media">
+Media
+</option>
+
+<option value="Alta">
+Alta
+</option>
+
+</select>
+
+<button type="submit">
+Guardar Reporte
+</button>
+
+<a href="/usuarios" class="btn-cancelar">
+                Cancelar
+            </a>
+</form>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+</body>
+</html>

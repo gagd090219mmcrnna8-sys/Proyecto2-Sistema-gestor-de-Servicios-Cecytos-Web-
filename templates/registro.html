@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Crear Cuenta</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+
+<body>
+
+    <div class="background-animation"></div>
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <img
+            src="{{ url_for('static', filename='img/logo1.png') }}"
+            class="logo-login">
+
+            <h1>Crear Cuenta</h1>
+
+            <p class="login-subtitulo">
+                Registro de nuevos usuarios
+            </p>
+
+            <form
+            action="/guardar_registro"
+            method="POST">
+
+                <label>Nombre Completo</label>
+
+                <input
+                type="text"
+                name="nombre"
+                required>
+
+                <label>Correo Electrónico</label>
+
+                <input
+                type="email"
+                name="correo"
+                required>
+
+                <label>Contraseña</label>
+
+                <input
+                type="password"
+                name="password"
+                required>
+
+                <button type="submit">
+                    Registrarse
+                </button>
+
+            </form>
+
+            <br>
+
+            <a href="/login">
+                Ya tengo cuenta
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

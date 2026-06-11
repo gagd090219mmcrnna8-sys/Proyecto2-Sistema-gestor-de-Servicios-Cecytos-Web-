@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+{% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Editar Servicio
+{% endblock %}
+
+{% block contenido %}
+
+<div class="formulario">
+
+<h1>Editar Servicio</h1>
+
+<form action="/actualizar_servicio" method="POST">
+
+<input
+type="hidden"
+name="id_servicio"
+value="{{ servicio.id_servicio }}">
+
+<label>Nombre</label>
+
+<input
+type="text"
+name="nombre_servicio"
+value="{{ servicio.nombre_servicio }}"
+required>
+
+<label>Descripción</label>
+
+<textarea
+name="descripcion">
+{{ servicio.descripcion }}
+</textarea>
+
+<label>Horario</label>
+
+<input
+type="text"
+name="horario"
+value="{{ servicio.horario }}">
+
+<label>Responsable</label>
+
+<input
+type="text"
+name="responsable"
+value="{{ servicio.responsable }}">
+
+<label>Estado</label>
+
+<select name="estado_servicio">
+
+<option value="Activo">
+Activo
+</option>
+
+<option value="Inactivo">
+Inactivo
+</option>
+
+</select>
+
+<button type="submit">
+Actualizar
+</button>
+
+<a href="/usuarios" class="btn-cancelar">
+                Cancelar
+            </a>
+</form>
+
+</div>
+
+{% endblock %}
+
+
+</body>
+</html>

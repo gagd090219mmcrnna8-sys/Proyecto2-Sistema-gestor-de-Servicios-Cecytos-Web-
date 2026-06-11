@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+{% block titulo %}
+{% endblock %}
+</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='css/estilos.css') }}">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<div class="sidebar">
+
+<h2>CECYTOS</h2>
+
+<a href="/usuario">
+🏠Inicio
+</a>
+
+<a href="/crear_reporte">
+📋Crear Reporte
+</a>
+
+<a href="/mis_reportes">
+📑Mis Reportes
+</a>
+
+<a href="/logout">
+🔏Cerrar Sesión
+</a>
+
+</div>
+
+<div class="contenido">
+
+<div class="encabezado">
+
+<h2>
+Bienvenido
+{{ session['nombre'] }}
+</h2>
+
+</div>
+
+{% block contenido %}
+{% endblock %}
+
+</div>
+
+</div>
+
+</body>
+</html>

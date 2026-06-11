@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Iniciar Sesión</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+
+<body>
+
+    <div class="background-animation"></div>
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <img
+            src="{{ url_for('static', filename='img/logo1.png') }}"
+            class="logo-login">
+
+            <h1>CECYTOS WEB SERVICES</h1>
+
+            <p class="login-subtitulo">
+                Sistema de Gestión de Servicios Comunitarios
+            </p>
+
+            <form action="/validar_login" method="POST">
+
+                <label>Correo Electrónico</label>
+
+                <input
+                    type="email"
+                    name="correo"
+                    placeholder="Ingrese su correo"
+                    required>
+
+                <label>Contraseña</label>
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Ingrese su contraseña"
+                    required>
+
+                <button type="submit">
+                    Iniciar Sesión
+                </button>
+
+
+                <p class="registro-link">
+    ¿No tienes cuenta?
+
+    <a href="/registro">
+        Crear Cuenta
+    </a>
+</p>
+ 
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

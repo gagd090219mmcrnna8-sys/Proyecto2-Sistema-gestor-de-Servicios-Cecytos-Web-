@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usuarios</title>
+</head>
+<body>
+
+{% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Usuarios
+{% endblock %}
+
+{% block contenido %}
+
+<h1>Gestión de Usuarios</h1>
+
+<br>
+
+<a href="/nuevo_usuario">
+    <button>Nuevo Usuario</button>
+</a>
+
+<br><br>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Rol</th>
+    <th>Acciones</th>
+</tr>
+
+{% for usuario in usuarios %}
+
+<tr>
+
+<td>{{ usuario.id_usuario }}</td>
+<td>{{ usuario.nombre }}</td>
+<td>{{ usuario.correo }}</td>
+<td>{{ usuario.rol }}</td>
+
+<td>
+
+<a href="/editar_usuario/{{ usuario.id_usuario }}">
+Editar
+</a>
+
+|
+
+<a
+href="/eliminar_usuario/{{ usuario.id_usuario }}"
+
+onclick="
+return confirm(
+'¿Deseas eliminar este registro?'
+);">
+
+Eliminar
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
+
+<br>
+
+<a href="/admin">
+    <button>Volver</button>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Editar Usuario
+{% endblock %}
+
+{% block contenido %}
+
+<div class="formulario">
+
+    <h1>👤 Editar Usuario</h1>
+
+    <p class="subtitulo">
+        Modifica la información del usuario seleccionado.
+    </p>
+
+    <form action="/actualizar_usuario" method="POST">
+
+        <input
+            type="hidden"
+            name="id_usuario"
+            value="{{ usuario.id_usuario }}">
+
+        <label>Nombre Completo</label>
+
+        <input
+            type="text"
+            name="nombre"
+            value="{{ usuario.nombre }}"
+            required>
+
+        <label>Correo Electrónico</label>
+
+        <input
+            type="email"
+            name="correo"
+            value="{{ usuario.correo }}"
+            required>
+
+        <label>Rol del Usuario</label>
+
+        <select name="rol">
+
+            <option
+                value="usuario"
+                {% if usuario.rol == 'usuario' %}selected{% endif %}>
+                Usuario
+            </option>
+
+            <option
+                value="admin"
+                {% if usuario.rol == 'admin' %}selected{% endif %}>
+                Administrador
+            </option>
+
+        </select>
+
+        <div class="botones-formulario">
+
+            <button type="submit">
+                💾 Actualizar Usuario
+            </button>
+
+            <a href="/usuarios" class="btn-cancelar">
+                Cancelar
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
+</body>
+</html>

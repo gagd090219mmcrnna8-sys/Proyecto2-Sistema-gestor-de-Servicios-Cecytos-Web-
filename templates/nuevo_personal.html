@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Nuevo Personal
+{% endblock %}
+
+{% block contenido %}
+
+<div class="formulario">
+
+<h1>Registrar Personal</h1>
+
+<form action="/guardar_personal" method="POST">
+
+<label>Nombre</label>
+<input type="text" name="nombre" required>
+
+<label>Puesto</label>
+<input type="text" name="puesto" required>
+
+<label>Área</label>
+<input type="text" name="area">
+
+<label>Teléfono</label>
+<input type="text" name="telefono">
+
+<label>Correo</label>
+<input type="email" name="correo">
+
+<label>Turno</label>
+<input type="text" name="turno">
+
+<button type="submit">
+Guardar
+</button>
+
+<a href="/usuarios" class="btn-cancelar">
+                Cancelar
+            </a>
+</form>
+
+</div>
+
+{% endblock %}
+
+
+
+</body>
+</html>

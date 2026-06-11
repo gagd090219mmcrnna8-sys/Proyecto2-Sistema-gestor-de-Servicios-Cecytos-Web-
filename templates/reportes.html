@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+{% extends 'layout_admin.html' %}
+
+{% block titulo %}
+Reportes
+{% endblock %}
+
+{% block contenido %}
+
+<h1>Administración de Reportes</h1>
+
+<br>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Usuario</th>
+    <th>Servicio</th>
+    <th>Fecha</th>
+    <th>Hora</th>
+    <th>Estado</th>
+    <th>Personal</th>
+    <th>Acción</th>
+</tr>
+
+{% for r in reportes %}
+
+<tr>
+
+<td>{{ r.id_reporte }}</td>
+
+<td>{{ r.usuario }}</td>
+
+<td>{{ r.nombre_servicio }}</td>
+
+<td>{{ r.fecha_reporte }}</td>
+
+<td>{{ r.hora_reporte }}</td>
+
+<td>{{ r.estado }}</td>
+
+<td>
+{% if r.personal %}
+    {{ r.personal }}
+{% else %}
+    Sin asignar
+{% endif %}
+</td>
+
+<td>
+
+<a href="/gestionar_reporte/{{ r.id_reporte }}">
+Gestionar
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
+
+
+
+</body>
+</html>
